@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair:opsz@5..1200&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: "Playfair";
+  color: #333;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: auto;
+  padding: 2rem;
+
+  height: 100dvh;
+  max-width: 50rem;
+  background-color: #efefef;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+#button {
+  padding: 0.5rem;
+  font-size: 3.2rem;
+
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  transition: box-shadow 100ms;
+
+  cursor: pointer;
+}
+
+
+#board {
+  margin: auto;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+
+  height: min(50dvh, 80dvw);
+  width: min(50dvh, 80dvw);
+}
+
+#board span {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+
+  border-right: 0.1rem solid #333;
+  border-bottom: 0.1rem solid #333;
+
+  font-size: clamp(3.2rem, 3vw, 5.4rem);
+  transition: background-color 100ms;
+}
+
+#board span:nth-child(3n) {
+  border-right: none;
+}
+
+#board span:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+#board span:active {
+  background-color: #3333;
+}
+
+a {
+  display: block;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+@media (hover: hover) {
+  #board span {
+    transition: background-color 500ms;
+  }
+
+  #board span:hover {
+    background-color: #3333;
+    cursor: pointer;
+  }
+}
